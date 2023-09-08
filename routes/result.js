@@ -9,11 +9,13 @@ router.route(`/`).get(async (req, res) => {
     const current_day = date.toLocaleDateString(undefined, {
         weekday: `long`
     })
+    const current_time=date.toISOString().replace(/\.\d{3}Z$/,'Z')
+
     /* ---results data---- */
     const results = [{
         "slack_name": "Omojola_T",
-        "current_day": current_day,
-        "utc_time": date.toISOString(),
+        "current_day":current_day,
+        "utc_time": current_time,
         "track": "backend",
         "github_file_url": "https://github.com/Tomiloba2/Hng-stage1/blob/master/index.js",
         "github_repo_url": "https://github.com/Tomiloba2/Hng-stage1.git",
